@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trump Tariff AI Agent</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h2>Trump Tariff AI Agent</h2>
+
+    <!-- Chatbot Interface -->
+    <div id="chatbot" class="chatbot-container">
+        <div class="chat-header">Ask the AI Trump About Tariffs</div>
+        <div id="chat-body" class="chat-body"></div>
+        <input type="text" id="user-input" placeholder="Ask about tariffs...">
+        <button id="send-btn">Send</button>
+    </div>
+
+    <script>
+        document.getElementById("send-btn").addEventListener("click", async () => {
+            let userMessage = document.getElementById("user-input").value;
+            document.getElementById("chat-body").innerHTML += `<div class="user-msg">${userMessage}</div>`;
+
+            // Send user message to AI backend
+            let response = await fetch("/ai-agent", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ message: userMessage })
+            });
+
+            let result = await response.json();
+            document.getElementById("chat-body").innerHTML += `<div class="ai-msg">${result.reply}</div>`;
+        });
+    </script>
+
+</body>
+</html>

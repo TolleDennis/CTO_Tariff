@@ -1,0 +1,173 @@
+/* Background and Body */
+body.animated-background {
+    background: url('/static/tariff_dashboard/american-theme.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 45vh; /* Keeps it centered */
+    padding: 30px;
+    position: relative;
+}
+
+/* Adding overlay for better readability */
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 1;
+}
+
+/* Ensures text stays above overlay */
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Hero Title and Subtitle */
+.hero-title {
+    font-size: 48px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    color: #fff;
+}
+
+.hero-subtitle {
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 0.9;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    color: #f1f1f1;
+}
+
+/* Features Section */
+.features-section {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping */
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Add spacing between items */
+    text-align: center;
+    padding: 50px 20px;
+}
+
+/* Feature Cards */
+.feature-card {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    color: white;
+    border: 3px solid white;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    width: 300px; 
+    height: 200px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+}
+
+/* Ensures proper layout for inner text */
+.feature-card h3 {
+    margin: 10px 0;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.feature-card p {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.feature-card .btn {
+    margin-top: 10px;
+}
+
+
+/* Buttons */
+.btn-secondary {
+    background: linear-gradient(90deg, #ff0000, #002868);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.btn-secondary:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    color: white;
+    animation: fadeIn 1s ease-in;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-in;
+}
+
+.animate-fade-in-delay {
+    animation: fadeIn 1s ease-in 0.5s;
+}
+
+.animate-slide-down {
+    animation: fadeInDown 1s ease-out;
+}
+
+.animate-slide-up {
+    animation: slideInUp 1s ease-out;
+}
+
+.animate-slide-up-delay {
+    animation: slideInUp 1s ease-out 0.5s;
+}
+
+.animate-slide-up-delay-2 {
+    animation: slideInUp 1s ease-out 1s;
+}
